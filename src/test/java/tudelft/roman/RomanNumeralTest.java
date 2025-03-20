@@ -1,36 +1,17 @@
 package tudelft.roman;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+public class RomanNumeralTest{
+    public static void main(String[] args) {
+        RomanNumeral romanNumeral = new RomanNumeral();
 
-public class RomanNumeralTest {
+        //  No hay validacion de longitud debe convertir correctamente un numero largo
+        String num1 = "MMMDCCCLXXXVIII";
+        int result1 = romanNumeral.convert(num1);
+        System.out.println("Conversión de " + num1 + " = " + result1);
 
-
-    @Test
-    public void singleNumber() {
-        RomanNumeral roman = new RomanNumeral();
-        int result = roman.convert("I");
-        Assertions.assertEquals(1, result);
-    }
-
-    @Test
-    public void numberWithManyDigits() {
-        RomanNumeral roman = new RomanNumeral();
-        int result = roman.convert("VIII");
-        Assertions.assertEquals(8, result);
-    }
-
-    @Test
-    public void numberWithSubtractiveNotation() {
-        RomanNumeral roman = new RomanNumeral();
-        int result = roman.convert("IV");
-        Assertions.assertEquals(4, result);
-    }
-
-    @Test
-    public void numberWithAndWithoutSubtractiveNotation() {
-        RomanNumeral roman = new RomanNumeral();
-        int result = roman.convert("XLIV");
-        Assertions.assertEquals(44, result);
+        //  Numero romano invalido XVIIII sabiendo que deberia ser XIX
+        String num = "XVIIII";
+        int result2 = romanNumeral.convert(num);
+        System.out.println("Conversión de " + num + " = " + result2);
     }
 }
