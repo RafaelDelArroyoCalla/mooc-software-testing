@@ -13,11 +13,11 @@ public class ChocolateBagsTest {
         Assertions.assertEquals(expectedResult, result);
     }
 
-    @ParameterizedTest(name = "small={0}, big={1}, total={2}, result={3}")
-    @CsvSource({ "4,0,10,-1", "4,1,10,-1", "5,2,10,0", "5,3,10,0" })
-    public void onlyBigBars(int small, int big, int total, int expectedResult) {
-        int result = new ChocolateBags().calculate(small, big, total);
-        Assertions.assertEquals(expectedResult, result);
+    @ParameterizedTest(name = "mini={0}, maxi={1}, objetivo={2}, resultado={3}")
+    @CsvSource({ "3,1,9,-1", "6,2,15,5", "7,3,20,5", "2,5,10,0" })
+    public void onlyBigBars(int mini, int maxi, int objetivo, int resultado) {
+        int res = new ChocolateBags().calculate(mini, maxi, objetivo);
+        Assertions.assertEquals(resultado, res);
     }
 
     @ParameterizedTest(name = "small={0}, big={1}, total={2}, result={3}")
@@ -29,10 +29,10 @@ public class ChocolateBagsTest {
         Assertions.assertEquals(expectedResult, result);
     }
 
-    @ParameterizedTest(name = "small={0}, big={1}, total={2}, result={3}")
-    @CsvSource({ "4,2,3,3", "3,2,3,3", "2,2,3,-1", "1,2,3,-1" })
-    public void onlySmallBars(int small, int big, int total, int expectedResult) {
-        int result = new ChocolateBags().calculate(small, big, total);
-        Assertions.assertEquals(expectedResult, result);
+    @ParameterizedTest(name = "mini={0}, maxi={1}, objetivo={2}, resultado={3}")
+    @CsvSource({ "5,0,4,4", "8,0,7,7", "3,0,5,-1", "6,0,6,6" })
+    public void onlySmallBars(int mini, int maxi, int objetivo, int resultado) {
+        int res = new ChocolateBags().calculate(mini, maxi, objetivo);
+        Assertions.assertEquals(resultado, res);
     }
 }
