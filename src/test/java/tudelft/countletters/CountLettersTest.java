@@ -41,4 +41,17 @@ public class CountLettersTest {
         Assertions.assertEquals(0, result);  // No se debe contar ninguna palabra
     }
 
+    @Test
+    public void testMCDC() {
+        CountLetters countLetters = new CountLetters();
+
+        // Caso donde A es verdadero, B es falso
+        int result = countLetters.count("cats!");
+        Assertions.assertEquals(1, result);
+
+        // Caso donde A es falso, B es verdadero
+        result = countLetters.count("dog");
+        Assertions.assertEquals(0, result);
+    }
+
 }
