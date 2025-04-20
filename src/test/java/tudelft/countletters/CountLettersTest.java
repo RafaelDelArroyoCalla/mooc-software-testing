@@ -16,5 +16,17 @@ public class CountLettersTest {
         int words = new CountLetters().count("cats|dog");
         Assertions.assertEquals(1, words);
     }
+    @Test
+    public void testCountLettersBranchCoverage() {
+        CountLetters countLetters = new CountLetters();
+
+        // Rama 1: Cuando no es una letra y la ultima letra es 'r' o 's'
+        int result = countLetters.count("cats!");
+        Assertions.assertEquals(1, result);  // cats debe ser contada
+
+        // Rama 2: Cuando no es una letra y la ultima letra no es 'r' ni 's'
+        result = countLetters.count("dog");
+        Assertions.assertEquals(0, result);  // No se debe contar ninguna palabra
+    }
 
 }
