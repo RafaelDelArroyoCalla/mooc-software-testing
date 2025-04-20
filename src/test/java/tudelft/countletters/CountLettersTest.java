@@ -28,5 +28,17 @@ public class CountLettersTest {
         result = countLetters.count("dog");
         Assertions.assertEquals(0, result);  // No se debe contar ninguna palabra
     }
+    @Test
+    public void testCountLettersConditionCoverage() {
+        CountLetters countLetters = new CountLetters();
+
+        // cuando la letra no es una letra (Character.isLetter es falso) y la ultima letra es 'r'
+        int result = countLetters.count("cats!");
+        Assertions.assertEquals(1, result);  // cats debe ser contada
+
+        // cuando la letra es una letra y la ultima letra es 'r' o 's'
+        result = countLetters.count("cat!");
+        Assertions.assertEquals(0, result);  // No se debe contar ninguna palabra
+    }
 
 }
