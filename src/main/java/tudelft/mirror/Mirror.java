@@ -4,18 +4,17 @@ public class Mirror {
 
     public String mirrorEnds(String string) {
         String mirror = "";
-
         int begin = 0;
         int end = string.length() - 1;
-        for (; begin < end; begin++, end--) {
-            if (string.charAt(begin) == string.charAt(end)) {
-                mirror += String.valueOf(string.charAt(end));
-            }
-            else {
-                break;
-            }
+        // Recorrer hasta que los caracteres coincidan desde el principio y el final
+        while (begin <= end && string.charAt(begin) == string.charAt(end)) {
+            mirror += string.charAt(begin);  // Agregar el caracter al resultado
+            begin++;
+            end--;
         }
-
-        return begin == end ? string : mirror;
+        if (begin == end) {
+            mirror += string.charAt(begin);
+        }
+        return mirror;  // Devuelve el extremo reflejado
     }
 }
