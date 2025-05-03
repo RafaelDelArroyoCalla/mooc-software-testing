@@ -6,7 +6,7 @@ import org.mockito.Mockito;
 
 import java.util.Arrays;
 import java.util.List;
-
+//test funciona correctamente
 public class InvoiceFilterTest {
     @Test
     void filterInvoices() {
